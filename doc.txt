@@ -1,0 +1,608 @@
+filename.java 	исходник имя класса должно совпадать с с именем файла
+filename.class	байт-код после компиляции javac
+
+
+Консольные команды
+cmd
+javac Bender.java
+java
+cd D:\
+dir D:\Java\Projects\Evil Nerd\src
+
+библиотеки классов ???пакеты ("packages")
+java.util
+java.io
+java.net
+java.awt
+java.awt.image
+java.awt.peer
+java.applet
+
+
+//комментарии
+
+/*
+комментарии
+*/
+
+/**
+javadoc комментарии
+*/
+
+//класс делится на методы, а методы на команды
+класс? class программа всегда с большой буквы!!
+	метод?  функция или процедура с маленькой буквы с глагола без пробелов дальше с большой буквы
+		showTwoDigits main
+			команда
+
+ctrl-d 		скопировать строку
+ctrl-q		помощь
+psvm
+ctrl-alt-l reformat code
+
+Переменные примитив-ссылочный тип (примитивы и ссылки)
+Каждая переменная в Java имеет три важных свойства: тип, имя и значение.
+не может содержать пробелов, символов +,- и т.д. «int a» – это не то же самое, что и «Int a»
+
+примитивы
+boolean	8	false	логические (true or false)
+	byte	8	0	целочисленные
+char	16	'x0'	символы
+	short	16	0	целочисленные
+int	32	0	целочисленные
+long	64	0	целочисленные добавляем L в конце
+float	32	0.0F	вещественные
+double	64	0.0D	вещественные
+
+ссылочные-все остальные
+final			константа
+string			строки
+
+
+Арифметические операции
+//встроенных классов класс Math синуса, косинуса и тангенса
++	сложение a=a+b a+=b
+-	вычитание
+/	деление
+*	умножение
+%	остаток от деления
+++	инкремент a=a+1 a++ ++a
++=
+-=
+*=
+/=
+%=
+--	декремент a=a-1 a-- --a
+
+Сравнение операторы
+	<	меньше
+	<=	меньше или равно
+	>	больше
+	>=	больше или равно
+   ==   equals  равно
+	!=	не равно
+
+
+Булевские операции
+!	Отрицание = NOT = НЕ = !
+&&	Конъюнкция = AND = И = &
+||	Дизъюнкция = OR = ИЛИ = |
+^	Сложение по модулю 2 = XOR = ИСКЛЮЧАЮЩЕЕ ИЛИ = ~
+
+
+Управляющие конструкции Циклы и Условные операторы
+if (x==1) {();} else {();}
+
+        if ((a<b)&&(a<c)) return a;
+        else if(b<c) return b;
+        else return c;
+
+
+switch case 0: break; default: ;
+?
+while (условие) {действие;}
+do while
+for (int i=0;i<5;i++) {действие;}
+break continue метки
+return
+
+
+Массивы []
+int[] arr = new int [5];
+
+
+ООП
+инкапсуляция
+полиморфизм: наследование переопределение методов
+package org.stepic.java;
+
+модификаторы доступа
+public		отовсюду без ограничений
+protected	для текущего пакета и наследников
+static		отсутствие модификатора (только в пределах пакета)
+private		в пределах класса
+
+классы
+объявление класса имя совпадает с именем файла
+у классов верхнего уровня (не вложенных в другие классы) может быть только два модификатора доступа:
+* public — тогда открытые методы и поля класса доступны за пределами текущего пакета
+* пустой (отсутствующий) — тогда эти методы и поля доступны только в пределах текущего пакета
+
+public final class Integer {}
+final - от данного класса нельзя наследовать
+
+private final int i=1; - значение переменной можно присвоить только однажды
+конструкторы
+методы
+
+
+перечисления enum
+аннотации @Override переопределение метода
+
+наследование extends
+
+ошибки и исключения
+java.lang.Throwable		Базовый класс для всех исключений
+java.lang.Error			Базовый класс для исключений, соответствующих ошибкам виртуальной машины
+java.lang.Exception		Базовый класс для проверяемых исключений, соответствующих ошибкам программной логики
+java.lang.RuntimeException	Базовый класс для непроверяемых исключений, соответствующих ошибкам программной логики
+
+
+Все классы в Java наследуются от класса Object, который имеет метод toString ()
+
+
+ввод с клавиатуры
+
+
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        String reader = bufferedReader.readLine();
+        int a = Integer.parseInt(reader);
+
+	Scanner scanner = new Scanner(System.in);
+	String name = scanner.nextLine();
+	int age = scanner.nextInt();
+
+пакет
+	класс файл
+		объект???
+		метод(); {тело метода}
+			командный блок{}
+				команда;
+
+Escape - последовательности
+\t	Вставьте вкладку в текст на этом этапе.
+\b	Вставьте клавишу возврата в текст на этом этапе.
+\n	Вставьте новую строку в текст в этой точке.
+\r	Вставьте возврат каретки в текст на этом этапе.
+\f	Вставьте форму подачи в текст на этом этапе.
+\'	Вставьте символ одинарной кавычки в текст на этом этапе.
+\"	Вставьте символ двойной кавычки в текст на этом этапе.
+\\	Вставьте символ обратной косой черты в текст на этом этапе.
+
+
+class Idea{} 					//класс
+public static void printIdea(Idea idea){}	//метод printIdea()
+public String getDescription(){}		//метод
+public void method4(){}				//метод
+
+new Cat(); 			//новый объект
+Cat catTommy = new Cat();	//сохраняем объект в переменную catTommy тип Cat
+
+catTommy.name 	 = "Tommy";	//заполняем данные объекта
+catTommy.age	 = 6;
+catTommy.weigth	 = 4;
+
+catTommy.sleep();		//вызов метода объекта
+catTommy.fight(catBarsik);	//вызов метода объекта
+
+
+
+public class Cat
+{
+    public String name;
+    public int age;
+    public int weight;
+    public int strength;
+}
+
+
+
+public class Solution {
+    public static void main(String[] args) {
+        //add your code here
+        Cat cat1 = new Cat("1",2,3,4);
+        Cat cat2 = new Cat("1",2,3,4);
+        Cat cat3 = new Cat("1",2,3,4);
+
+    }
+
+    public static class Cat {
+
+        public static int count = 0;
+        private String name;
+        private int age;
+        private int weight;
+        private int strength;
+
+        public Cat(String name, int age, int weight, int strength) {
+            count++;
+
+            this.name = name;		//конструктор
+            this.age = age;		//конструктор
+            this.weight = weight;	//конструктор
+            this.strength = strength;	//конструктор
+        }
+    }
+}
+
+
+public class Dog {
+    //add class variables here
+        private String name;		//переменные класса Обычно переменные, объявленные внутри класса, имеют модификатор private
+        private int age;		//переменные класса Обычно переменные, объявленные внутри класса, имеют модификатор private
+
+    //add getters & setters here
+    String getName() {return name;}			//Цель метода get - вернуть текущее значение переменной тому, кто ее вызвал
+    void setName(String name){this.name=name;}		//Цель метода set - установить новое значение
+
+    int getAge() {return age;}				//Цель метода get - вернуть текущее значение переменной тому, кто ее вызвал
+    void setAge(int age){this.age=age;}			//Цель метода set - установить новое значение
+
+}
+
+
+
+метод initialize
+
+class MyFile							//создаем объект
+{
+	private String filename = null;				//переменная класса MyFile
+
+	public void initialize(String name)			//метод initialize 1
+		{this.filename=name;}
+
+	public void initialize(String folder, String name)	//метод initialize 2
+		{this.filename=folder+name;}
+}
+
+
+
+о конструкторах. Все очень просто: программисты изобрели сокращенную запись для создания и инициализации объекта
+конструкторы дают обойтись без инициализатора?
+Cat catTommy = new Cat();
+метод инициализации в классе, конструктор в классе
+
+Имя метода конструктора совпадает с именем класса (вместо инициализации )
+Метод конструктора не имеет возвращаемого типа (тип не указан вообще)
+- На самом деле, это тот же метод инициализации, но с некоторыми отличиями. Я вроде понял.
+
+class MyFile{
+public void initialize(String name)			//метод initialize 1
+		{this.filename=name;}
+}
+
+//конструктор//конструктор//конструктор//конструктор//конструктор
+public class Cat {
+	private String name;		//alt insert
+	ptivate int age;
+	...
+	public Cat(String name,int age,...){ 		//совпадает с классом
+	Cat cat = new Cat(1,"2","3");	//new вызов конструктора
+	this.name=name;		//геттеры и сеттеры
+	thia.age=age;	//this обращение к свойствам класса
+}
+
+
+
+
+/////////////////////////Что необходимо знать Junior Java Developer-у?
+
+Изучите глубоко Java Core!!!!!!!!!!Java API и Github
++++++концепции ООП - наследование, инкапсуляция, полиморфизм
+Базовые знания структур данных (массивы, очереди, стеки, списки и пр.);
+общее представление о базах данных и языке SQL
+Tutorial Java от Oracle
+java.lang, java.io, java.util
+
+
+Java Basics;
+? Потоки выполнения (Threads);
+? Потоки ввода-вывода (I/O);
+? XML + Java, JUnit, Log4j;
+? RDB + SQL;
+? JDBC;
+? Maven/Git/Idea workshop;
+? Spring
+
+
+-+	java api философия джава эккель
+-+	java core collection api map set list
+	коллекции лямбды дженерики
+-+	spring boot logger
+-+	резюме
+-+	react js JPA hibernate
+-+	spring
+
+
+
+----------массивы----------массивы----------массивы----------массивы----------массивы----------
+статический массив
+int[] numbers = new numbers[10];
+
+динамический массив
+//.get , .set и .add
+//нет квадратных скобок
+
+list.add(s);
+list.add(15, s);
+list.add(0, s);
+list.remove(3);
+list.get();
+list.set();
+list.size();
+list.remove();
+
+    ArrayList<String> list = new ArrayList<String>();
+    for (int i = 0; i < 10; i++){
+        String s = reader.readLine();
+        list.add(s);
+    }
+
+        for (int i = 0; i < list.size(); i++){
+        int j = list.size() - i - 1;
+        System.out.println(list.get(j));
+    }
+
+
+
+        for (int i = 0; i < 10; i++)
+        {
+            list.add(Integer.parseInt(reader.readLine()));
+        }
+
+--------сортировки--------сортировки--------сортировки--------сортировки--------сортировки--------сортировки--------
+
+Arrays.sort(array);
+Arrays.sort(array, Collections.reverseOrder()); //не для примитивов
+
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for (int i = 0; i < 10; i++) {
+            list.add(Integer.parseInt(reader.readLine()));
+        }
+
+        for (int i = list.size()-1; i >= 0; i--) {
+            System.out.println(list.get(i));
+        }
+
+------------------------------Set   Map  List-----------------------------Set   Map  List-----------------t---------
+
+public static void main(String[] args)
+{
+    Map<String, String> map = new HashMap<String, String>();
+    map.put("first", "Stop");
+    map.put("second", "Look");
+    map.put("third", "Listen");
+
+    for (Map.Entry<String, String> pair : map.entrySet())
+    {
+        String key = pair.getKey();
+        String value = pair.getValue();
+        System.out.println(key + ":" + value);
+    }
+}
+---------------------------------------------
+public static void main(String[] args)
+{
+    Set<String> set = new HashSet<String>();
+    set.add("Stop");
+    set.add("Look");
+    set.add("Listen");
+
+    Iterator<String> iterator = set.iterator();
+
+    while (iterator.hasNext())
+    {
+        String text = iterator.next();
+        System.out.println(text);
+    }
+}
+-----------------------------------------------
+
+public static void main(String[] args)
+{
+    List<String> list = new ArrayList<String>();
+    list.add("Stop");
+    list.add("Look");
+    list.add("Listen");
+
+    Iterator<String> iterator = list.iterator();
+
+    while (iterator.hasNext())
+    {
+        String text = iterator.next();
+        System.out.println(text);
+    }
+}
+---------------------------------------------------
+
+
+
+        list.add(Integer.parseInt(reader.readLine())); ////
+
+--------------------------------------------------------------
+        StackTraceElement[] stackTraceElements2 = Thread.currentThread().getStackTrace();
+        for (StackTraceElement element : stackTraceElements2)
+        {
+            System.out.println(element.getMethodName());
+        }
+        return stackTraceElements2;
+----------------------------------------------------------------------
+
+        try	{
+            System.out.println("До вызова");
+            int a = 42 / 0;
+            System.out.println("После вызова");
+        }
+        catch (ArithmeticException e)	{System.out.println("Ошибка: " + e);}
+
+
+
+        catch (NumberFormatException e) {System.out.println("NumberFormatException " + e);}
+        catch (ArrayIndexOutOfBoundsException e) {System.out.println("ошибка ArrayIndexOutOfBoundsException " + e);}
+        catch (ArithmeticException e) {System.out.println("ArithmeticException " + e);}
+        catch (IndexOutOfBoundsException e) {System.out.println("IndexOutOfBoundsException " + e);}
+        catch (IllegalArgumentException e) {System.out.println("IllegalArgumentException " + e);}
+        catch (RuntimeException e) {System.out.println("RuntimeException " + e);}
+        catch (Exception e) {System.out.println("Exception " + e);}
+
+
+
+BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+ArrayList<String> list = new ArrayList<String>();
+String name = reader.readLine();
+int age = Integer.parseInt(reader.readLine());
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MM yyyy");
+        System.out.println(dateFormat.format( new Date() ) );
+
+ArrayList<String> list = new ArrayList<String>();
+
+    list.forEach(System.out::println);
+for (int i = 0; i < list.size(); i++) System.out.println(list)
+
+mabutamail
+rbkmlsvVskj362r
+
+
+
+    Iterator<String> iterator = set.iterator();
+    while (iterator.hasNext()) {      	 	//проверка, есть ли ещё элементы
+        String text = iterator.next();		//получение текущего элемента и переход на следующий
+        System.out.println(text);
+
+
+    	Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
+ 	while (iterator.hasNext()){
+		Map.Entry<String, String> pair = iterator.next();	//получение «пары» элементов
+       		String key = pair.getKey();           			//ключ
+       		String value = pair.getValue();      			//значение
+       	 	System.out.println(key + ":" + value);
+
+
+    for (String text : set)	System.out.println(text);
+
+map.forEach((key, value) -> System.out.println(value));
+
+    for (Map.Entry<String, String> pair : map.entrySet())	{
+        String key = pair.getKey();                      //ключ
+        String value = pair.getValue();                  //значение
+        System.out.println(key + ":" + value);
+    }
+
+
+
+map.entrySet().removeIf(value -> value.getValue() < 500);
+
+HashMap<String, String> map = new HashMap<>();
+
+
+
+
+        int count = 0;
+        for (HashMap.Entry<String, String> pair : map.entrySet())	{
+            //String key = pair.getKey();                  //значение
+            //if (key.equals(lastName)) count++;
+            if (pair.getKey().equals(lastName)) count++;
+        }
+        return count;  //return map.containsKey(lastName)?1:0; //решение в 1 строку
+
+
+
+
+----------------Git----------------Git----------------Git----------------Git----------------Git----------------Git----------------
+
+git	//система контроля, управляется командами из консоли, хранит историю изменений файлов
+github	//облачный сервер, файловое хранилище, место, где могут хранится файлы
+
+
+git config --global user.name "GitMegauser"			//имя пользователя
+git config --global user.email "git_super@example.com"		//почта пользователя
+
+.gitignore				//фильтр гита
+	#, служит комментарием
+
+
+git config --list			//показать все настройки, которые Git найдёт
+git status -s
+git version
+git log
+git diff				//показать изменения
+
+git clone				//клонирование репозитория с удаленного сервера
+git commit -am "Git rules!"		//индексируются файлы
+git pull				//получить с удалённого сервера
+git push				//отправляет на удалённый сервер
+git merge				//слияние веток
+git add file.txt			//добавляет содержимое файла в индекс
+	git add Documentation/\*.txt
+	git add git-*.sh
+
+git rm file.java 			//удаляет файл из индекса
+	git rm --cached file.txt	//удаление файла только из индекса (сохраняет его в файловой системе)
+
+git checkout master		//перейти в ветку мастер
+git checkout -b test		//создать ветку тест
+git branch -a			//покажет все ветки, список, создание или удаление веток
+git merge test			//влить ветку тест в текущую
+
+
+q				//выход
+
+
+
+
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout    Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+
