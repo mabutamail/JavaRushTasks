@@ -9,12 +9,11 @@ import java.util.Set;
 или с конструктором без параметров.
 2. Реализовать метод createCats, который должен возвращать множество с 4 котами.
 3. Реализовать метод createDogs, который должен возвращать множество с 3 собаками.
-4. Реализовать метод join, который должен возвращать объединенное множество всех животных
- - всех котов и собак.
+4. Реализовать метод join, который должен возвращать объединенное множество всех животных -
+всех котов и собак.
 5. Реализовать метод removeCats, который должен удалять из множества pets всех котов,
 которые есть в множестве cats.
-6. Реализовать метод printPets, который должен выводить на экран всех животных, которые
-в нем есть.
+6. Реализовать метод printPets, который должен выводить на экран всех животных, которые в нем есть.
 Каждое животное с новой строки.
 
 
@@ -25,8 +24,7 @@ import java.util.Set;
 4. Метод createDogs() класса Solution должен возвращать множество (Set) содержащее 3 собаки.
 5. Метод join() класса Solution должен возвращать объединенное множество всех животных -
 всех котов и собак.
-6. Метод removeCats() должен удалять из множества pets всех котов, которые есть
-в множестве cats.
+6. Метод removeCats() должен удалять из множества pets всех котов, которые есть в множестве cats.
 7. Метод printPets() должен выводить на экран всех животных, которые в нем есть.
 Каждое животное с новой строки.
 */
@@ -47,29 +45,47 @@ public class Solution {
         HashSet<Cat> result = new HashSet<Cat>();
 
         //напишите тут ваш код
+        result.add(new Cat());
+        result.add(new Cat());
+        result.add(new Cat());
+        result.add(new Cat());
 
         return result;
     }
 
     public static Set<Dog> createDogs() {
+        HashSet<Dog> result1 = new HashSet<Dog>();
         //напишите тут ваш код
-        return null;
+        result1.add(new Dog());
+        result1.add(new Dog());
+        result1.add(new Dog());
+
+        return result1;
     }
 
     public static Set<Object> join(Set<Cat> cats, Set<Dog> dogs) {
         //напишите тут ваш код
-        return null;
+        Set<Object> join = new HashSet<>();
+        join.addAll(dogs);
+        join.addAll(cats);
+
+        return join;
     }
 
     public static void removeCats(Set<Object> pets, Set<Cat> cats) {
         //напишите тут ваш код
+        pets.removeAll(cats);
     }
 
     public static void printPets(Set<Object> pets) {
         //напишите тут ваш код
+
+        pets.forEach(System.out::println);
+
     }
 
     //напишите тут ваш код
     public static class Cat{}
+
     public static class Dog{}
 }
