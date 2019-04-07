@@ -38,6 +38,8 @@ CharConversionException.
 */
 
 public class Solution {
+
+
     public static StatelessBean BEAN = new StatelessBean();
 
     public static void main(String[] args) {
