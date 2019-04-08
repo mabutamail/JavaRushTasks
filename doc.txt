@@ -610,3 +610,11 @@ concept guides. See 'git help <command>' or 'git help <concept>'
 to read about a specific subcommand or concept.
 
 
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        ArrayList<String> list = new ArrayList<>();
+        while (true) {
+            String s = reader.readLine();
+            if (s.isEmpty()) break;
+            list.add(s);
+        }
