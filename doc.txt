@@ -618,3 +618,12 @@ to read about a specific subcommand or concept.
             if (s.isEmpty()) break;
             list.add(s);
         }
+
+
+Горячая клавиша в IntelliJ IDEA для переопределения
+Ctrl+O
+
+@Override
+Полиморфизм и переопределение
+Перегрузка методов
+
