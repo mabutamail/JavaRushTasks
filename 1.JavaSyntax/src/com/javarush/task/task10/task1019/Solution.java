@@ -1,6 +1,7 @@
 package com.javarush.task.task10.task1019;
 
 import java.io.*;
+import java.util.HashMap;
 
 /* 
 Функциональности маловато!
@@ -39,10 +40,36 @@ import java.io.*;
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        HashMap<String, Integer> map = new HashMap<>();
 
-        int id = Integer.parseInt(reader.readLine());
-        String name = reader.readLine();
 
-        System.out.println("Id=" + id + " Name=" + name);
+        while (true) {
+            String id = reader.readLine();
+            if (id.isEmpty()) break;
+            String name = reader.readLine();
+            map.put(name, Integer.parseInt(id));
+        }
+
+//        while (true) {
+//            String id = reader.readLine();
+//            if (id.isEmpty()) break;
+//            int id = Integer.parseInt(reader.readLine());
+//            map.put(name, id);
+//        }
+
+        for (HashMap.Entry pair : map.entrySet()) {
+            System.out.println(pair.getValue() + " " + pair.getKey());
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
