@@ -676,3 +676,19 @@ git push - заливает ваши сделанные коммиты напр�
 К чему все это было: на howtogit данные лекции то ли отсутствуют (вряд ли), то ли где-то
 довольно далеко. Я прошел около 30-40, и так не дошел. А ведь подключаться к github'у очень
 хочется, когда вы там храните свой проект.
+
+AudioInputStream, ByteArrayInputStream, FileInputStream, FilterInputStream,
+ObjectInputStream, PipedInputStream, SequenceInputStream, StringBufferInputStream.
+
+
+1. Программа должна считывать c консоли имя файла.
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            FileInputStream fileName = new FileInputStream(reader.readLine());
+2. Программа должна выводить на экран содержимое файла.
+            while (fileName.available() > 0) {
+                System.out.print((char) fileName.read());
+            }
+3. Поток чтения из файла (FileInputStream) должен быть закрыт.
+            fileName.close();
+4. BufferedReader также должен быть закрыт.
+            reader.close();
