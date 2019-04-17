@@ -6,12 +6,12 @@ package com.javarush.task.task11.task1110;
 
 
 Требования:
-1. В классе Cat должно быть поле типа String с именем name.
-2. В классе Cat должно быть поле типа int с именем age.
-3. В классе Cat должно быть поле типа int с именем weight.
-4. В классе Cat должно быть поле типа int с именем speed.
-5. В классе Cat должны быть 4 поля.
-6. Все поля класса Cat должны быть private.
+1. В классе Animal.Cat должно быть поле типа String с именем name.
+2. В классе Animal.Cat должно быть поле типа int с именем age.
+3. В классе Animal.Cat должно быть поле типа int с именем weight.
+4. В классе Animal.Cat должно быть поле типа int с именем speed.
+5. В классе Animal.Cat должны быть 4 поля.
+6. Все поля класса Animal.Cat должны быть private.
 */
 
 public class Solution {

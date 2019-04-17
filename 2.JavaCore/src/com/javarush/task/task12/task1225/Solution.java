@@ -11,9 +11,9 @@ package com.javarush.task.task12.task1225;
 
 
 Требования:
-1. Класс Solution должен содержать классы Cat, Tiger, Lion, Bull, Cow, Animal.
+1. Класс Solution должен содержать классы Animal.Cat, Tiger, Lion, Bull, Cow, Animal.
 2. Класс Solution должен содержать метод String getObjectType(Object o).
-3. Метод getObjectType() должен возвращать строку "Кот", если передан объект типа Cat.
+3. Метод getObjectType() должен возвращать строку "Кот", если передан объект типа Animal.Cat.
 4. Метод getObjectType() должен возвращать строку "Тигр", если передан объект типа Tiger.
 5. Метод getObjectType() должен возвращать строку "Лев", если передан объект типа Lion.
 6. Метод getObjectType() должен возвращать строку "Бык", если передан объект типа Bull.

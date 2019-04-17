@@ -189,8 +189,8 @@ public static void printIdea(Idea idea){}	//метод printIdea()
 public String getDescription(){}		//метод
 public void method4(){}				//метод
 
-new Cat(); 			//новый объект
-Cat catTommy = new Cat();	//сохраняем объект в переменную catTommy тип Cat
+new Animal.Cat(); 			//новый объект
+Animal.Cat catTommy = new Animal.Cat();	//сохраняем объект в переменную catTommy тип Animal.Cat
 
 catTommy.name 	 = "Tommy";	//заполняем данные объекта
 catTommy.age	 = 6;
@@ -201,7 +201,7 @@ catTommy.fight(catBarsik);	//вызов метода объекта
 
 
 
-public class Cat
+public class Animal.Cat
 {
     public String name;
     public int age;
@@ -214,13 +214,13 @@ public class Cat
 public class Solution {
     public static void main(String[] args) {
         //add your code here
-        Cat cat1 = new Cat("1",2,3,4);
-        Cat cat2 = new Cat("1",2,3,4);
-        Cat cat3 = new Cat("1",2,3,4);
+        Animal.Cat cat1 = new Animal.Cat("1",2,3,4);
+        Animal.Cat cat2 = new Animal.Cat("1",2,3,4);
+        Animal.Cat cat3 = new Animal.Cat("1",2,3,4);
 
     }
 
-    public static class Cat {
+    public static class Animal.Cat {
 
         public static int count = 0;
         private String name;
@@ -228,7 +228,7 @@ public class Solution {
         private int weight;
         private int strength;
 
-        public Cat(String name, int age, int weight, int strength) {
+        public Animal.Cat(String name, int age, int weight, int strength) {
             count++;
 
             this.name = name;		//конструктор
@@ -273,7 +273,7 @@ class MyFile							//создаем объект
 
 о конструкторах. Все очень просто: программисты изобрели сокращенную запись для создания и инициализации объекта
 конструкторы дают обойтись без инициализатора?
-Cat catTommy = new Cat();
+Animal.Cat catTommy = new Animal.Cat();
 метод инициализации в классе, конструктор в классе
 
 Имя метода конструктора совпадает с именем класса (вместо инициализации )
@@ -286,12 +286,12 @@ public void initialize(String name)			//метод initialize 1
 }
 
 //конструктор//конструктор//конструктор//конструктор//конструктор
-public class Cat {
+public class Animal.Cat {
 	private String name;		//alt insert
 	ptivate int age;
 	...
-	public Cat(String name,int age,...){ 		//совпадает с классом
-	Cat cat = new Cat(1,"2","3");	//new вызов конструктора
+	public Animal.Cat(String name,int age,...){ 		//совпадает с классом
+	Animal.Cat cat = new Animal.Cat(1,"2","3");	//new вызов конструктора
 	this.name=name;		//геттеры и сеттеры
 	thia.age=age;	//this обращение к свойствам класса
 }
