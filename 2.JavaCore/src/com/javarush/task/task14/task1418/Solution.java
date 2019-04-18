@@ -44,10 +44,10 @@ public class Solution {
         for (Number object : list) {
             //Исправь 2 ошибки
             if (object instanceof Float) {
-                Double a = (Double) object;
+                Float a = (float) object;
                 System.out.println("Is float value defined? " + !(a.isNaN()));
             } else if (object instanceof Double) {
-                Float a = (Float) object;
+                Double a = (double) object;
                 System.out.println("Is double value infinite? " + a.isInfinite());
             }
         }
