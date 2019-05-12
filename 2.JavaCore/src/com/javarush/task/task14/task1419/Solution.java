@@ -1,5 +1,6 @@
 package com.javarush.task.task14.task1419;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,15 +28,25 @@ public class Solution {
         }
     }
 
-    private static void initExceptions() {   //the first exception
+    private static void initExceptions(){   //the first exception
         try {
             float i = 1 / 0;
-
         } catch (Exception e) {
             exceptions.add(e);
         }
 
         //напишите тут ваш код
-
+        try { throw new Exception(); }
+        catch (Exception e){
+            exceptions.add(new ArrayIndexOutOfBoundsException());
+            exceptions.add(new RuntimeException());
+            exceptions.add(new NumberFormatException());
+            exceptions.add(new StringIndexOutOfBoundsException());
+            exceptions.add(new NullPointerException());
+            exceptions.add(new ArrayStoreException());
+            exceptions.add(new ClassCastException());
+            exceptions.add(new IllegalArgumentException());
+            exceptions.add(new FileNotFoundException());
+        }
     }
 }
