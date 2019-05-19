@@ -7,8 +7,8 @@ import java.nio.file.FileSystemException;
 /* 
 Перехват выборочных исключений
 1. Разберись, какие исключения бросает метод BEAN.methodThrowExceptions.
-2. Метод handleExceptions должен вызывать метод BEAN.methodThrowExceptions и о
-брабатывать исключения:
+2. Метод handleExceptions должен вызывать метод BEAN.methodThrowExceptions
+и обрабатывать исключения:
 2.1. если возникло исключение FileSystemException, то логировать его (
 вызвать метод BEAN.log) и пробросить дальше
 2.2. если возникло исключение CharConversionException или любое другое IOException,
@@ -38,35 +38,41 @@ CharConversionException.
 */
 
 public class Solution {
-
-
     public static StatelessBean BEAN = new StatelessBean();
 
     public static void main(String[] args) {
-        handleExceptions();
+        try {
+            handleExceptions();
+        } catch (FileSystemException e) {
+            BEAN.log(e);
+        }
     }
 
-    public static void handleExceptions() {
+    public static void handleExceptions() throws FileSystemException {
         try {
             BEAN.methodThrowExceptions();
+        } catch (CharConversionException e) {
+            BEAN.log(e);
+        } catch (FileSystemException e) {
+            BEAN.log(e);
+            throw e;
         } catch (IOException e) {
-            e.printStackTrace();
+            BEAN.log(e);
         }
     }
 
     public static class StatelessBean {
         public void log(Exception exception) {
-            System.out.println(exception.getMessage() + ", " + exception.getClass().getSimpleName());
+            System.out.println("-----------------" + exception.getMessage() + ", "
+                + exception.getClass().getSimpleName());
         }
 
-        public void methodThrowExceptions() throws CharConversionException, FileSystemException, IOException {
+        public void methodThrowExceptions()
+            throws CharConversionException, FileSystemException, IOException {
             int i = (int) (Math.random() * 3);
-            if (i == 0)
-                throw new CharConversionException();
-            if (i == 1)
-                throw new FileSystemException("");
-            if (i == 2)
-                throw new IOException();
+            if (i == 0) throw new CharConversionException();
+            if (i == 1) throw new FileSystemException("");
+            if (i == 2) throw new IOException();
         }
     }
 }
