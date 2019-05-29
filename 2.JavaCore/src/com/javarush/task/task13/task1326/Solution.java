@@ -32,34 +32,41 @@ package com.javarush.task.task13.task1326;
 5. Программа должна закрывать поток чтения из файла(FileInputStream).
 */
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.io.*;
+import java.util.ArrayList;
+
+import static java.util.Collections.sort;
 
 public class Solution {
     public static void main(String[] args) {
         // напишите тут ваш код
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        String fileName = "file.txt";
+        BufferedReader file = new BufferedReader(new InputStreamReader(System.in));
+        //File file = new File("D:\\Java\\Projects\\JavaRushTasks\\2.JavaCore\\src\\com\\javarush\\task\\task13\\task1326\\file.txt");
+        //BufferedReader readerFile = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 
-        int [] arr = {5,8,-2,11,3,-5,2,10};
-//        int [arr.length] arrSort;
-//        int[] arrr = new int arrr[7];
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
 
         try {
-            fileName = bf.readLine();
-            FileInputStream fIn = new FileInputStream(fileName);
-            //String num = new FileInputStream();
-            //System.out.println(fileName);
+            FileInputStream fileInputStream = new FileInputStream("file");
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                arrayList.add(Integer.parseInt(line));
+            }
+            bufferedReader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Arrays.sort(arr);
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0) System.out.println(arr[i]);
+        arrayList.forEach(System.out::println);
+        System.out.println("\n");
+
+        sort(arrayList);
+
+        for (Integer integer : arrayList) {
+            if (integer % 2 == 0) System.out.println(integer);
         }
     }
 }
