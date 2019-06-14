@@ -18,18 +18,19 @@ Horse Racing
 
 
 Требования:
-1. Метод calculateHorsesFinished должен вернуть количество финишировавших лошадей.
-2. Метод calculateHorsesFinished должен вызывать метод isFinished у каждой лошади
- из переданного списка.
+1. Метод calculateHorsesFinished должен вернуть количество
+финишировавших лошадей.
+2. Метод calculateHorsesFinished должен вызывать метод isFinished
+у каждой лошади из переданного списка.
 3. Если какая-либо из переданных в списке лошадей еще не финишировала,
-метод calculateHorsesFinished должен вывести в консоль
-"Waiting for " + horse.getName().
+метод calculateHorsesFinished должен вывести в консоль "Waiting for "
++ horse.getName().
 Пример сообщения для первой лошади: "Waiting for Horse_01".
 4. Если какая-либо из переданных в списке лошадей еще не финишировала,
 метод calculateHorsesFinished должен подождать пока она финиширует.
 Используй правильный метод для ожидания.
-5. После завершения работы программы, консоль должна содержать информацию о том,
- что все лошади финишировали. Пример сообщения для первой лошади:
+5. После завершения работы программы, консоль должна содержать информацию
+о том, что все лошади финишировали. Пример сообщения для первой лошади:
  "Horse_01 has finished the race!".
 */
 
@@ -45,6 +46,12 @@ public class Solution {
         throws InterruptedException {
         int finishedCount = 0;
         //напишите тут ваш код
+        for (Horse horse : horses) {
+            if (!horse.isFinished()) {
+                System.out.println("Waiting for " + horse.getName());
+                horse.join();
+            } else finishedCount++;
+        }
         return finishedCount;
     }
 
@@ -63,9 +70,7 @@ public class Solution {
     }
 
     public static class Horse extends Thread {
-
         private boolean isFinished;
-
         public Horse(String name) {
             super(name);
         }
