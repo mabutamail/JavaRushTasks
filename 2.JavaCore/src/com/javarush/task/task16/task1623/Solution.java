@@ -52,12 +52,20 @@ public class Solution {
 
     public static class GenerateThread extends Thread {
         public GenerateThread() {
-            super(String.valueOf(createdThreadCount++));
+            super(((Integer) (++createdThreadCount)).toString());
+            start();
+        }
+
+        public void run() {
+            if (createdThreadCount < count ) {
+                GenerateThread generateThread = new GenerateThread();
+                System.out.println(generateThread);
+            }
         }
 
         @Override
         public String toString() {
-            return super.toString() + " created";
+            return this.getName() + " created";
         }
     }
 }
