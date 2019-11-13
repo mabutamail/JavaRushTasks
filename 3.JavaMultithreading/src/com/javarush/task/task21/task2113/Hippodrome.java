@@ -4,35 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- Ипподром(6)
- Теперь перейдем к классу Hippodrome и методу main.
- Нам нужно создать объект типа Hippodrome и добавить ему несколько лошадей.
+ Ипподром(16)
+ Теперь уже точно все.
 
- Для начала, в классе Hippodrome:
- Создай статическое поле game типа Hippodrome.
+ Добавь вызов метода printWinner в конец метода main.
 
- В методе main требуется:
- а) Создать объект типа Hippodrome и сохранить его в поле game.
- б) Создать три объекта "лошадь". Имена придумай сам. Начальные скорость у
- всех лошадей - 3, дистанция - 0.
- в) Добавить созданных лошадей в список лошадей ипподрома (horses).
- Получить список лошадей ипподрома можно с помощью метода getHorses.
+ Запускай и любуйся своей первой компьютерной игрой :)
 
 
  Требования:
- 1. В классе Hippodrome должно быть создано поле game типа Hippodrome.
- 2. Поле game должно быть статическим.
- 3. Поле game НЕ должно быть приватным.
- 4. В методе main должно инициализироваться поле game.
- 5. В методе main в список лошадей ипподрома должны быть добавлены три лошади.
- 6. Скорости всех лошадей должны быть равны 3, а дистанции - 0.
-
+ 1. Метод printWinner должен быть вызван в методе main после метода run.
  */
 
 
 public class Hippodrome {
 
+    public static Hippodrome game;
     private List<Horse> horses = new ArrayList<>();
+
+    public Hippodrome() {
+    }
 
     public List<Horse> getHorses() {
         return horses;
@@ -42,8 +33,57 @@ public class Hippodrome {
         this.horses = horses;
     }
 
+    public void run() throws InterruptedException {
+        for (int i = 0; i < 100; i++) {
+            move();
+            print();
+            Thread.sleep(200);
+        }
+    }
 
-    public static void main(String[] args) {
+    public void move() {
+
+        for (Horse horses : horses) {
+            horses.move();
+        }
+    }
+
+    public void print() {
+        for (Horse horses : horses) {
+            horses.print();
+        }
+//        for (int i = 0; i < 10; i++) {
+//            System.out.println();
+//        }
+    }
+
+    public Horse getWinner() {
+        double maxDistance = 0;
+        Horse winner = null;
+
+        for (Horse horses : horses) {
+            if (horses.getDistance() > maxDistance) {
+                maxDistance = horses.getDistance();
+                winner = horses;
+            }
+        }
+        return winner;
+    }
+
+    public void printWinner() {
+        System.out.println("Winner is " + getWinner().getName() + "!");
+    }
+
+
+    public static void main(String[] args) throws InterruptedException {
+        game = new Hippodrome();
+
+        game.getHorses().add(new Horse("papa", 3, 0));
+        game.getHorses().add(new Horse("mama", 3, 0));
+        game.getHorses().add(new Horse("grisha", 3, 0));
+
+        Hippodrome.game.run();
+        game.printWinner();
 
     }
 }
