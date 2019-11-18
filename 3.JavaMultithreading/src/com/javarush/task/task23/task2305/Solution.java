@@ -23,8 +23,14 @@ public class Solution {
     }
 
     public static Solution[] getTwoSolutions() {
-
-        return Solution;
+        Solution solution1 = new Solution();
+        solution1.innerClasses[0] = solution1. new InnerClass();
+        solution1.innerClasses[1] = solution1. new InnerClass();
+        Solution solution2 = new Solution();
+        solution2.innerClasses[0] = solution2. new InnerClass();
+        solution2.innerClasses[1] = solution2. new InnerClass();
+        Solution[] result = new Solution[]{solution1,solution2};
+        return result;
     }
 
     public static void main(String[] args) {
