@@ -11,5 +11,14 @@
     <orderEntry type="library" exported="" name="com.fasterxml.jackson.core:jackson-databind:2.6.1" level="project" />
     <orderEntry type="library" name="javax.activation-1.2.0" level="project" />
     <orderEntry type="library" name="org.slf4j:slf4j-api:1.7.23" level="application" />
+    <orderEntry type="library" name="com.yanzhenjie.apache:httpcore:4.4.11" level="project" />
+    <orderEntry type="library" name="httpclient-4.5.11" level="project" />
+    <orderEntry type="library" name="httpclient-4.0" level="project" />
+    <orderEntry type="library" name="httpclient-4.5.111" level="project" />
+    <orderEntry type="library" name="httpcore-4.4.13" level="project" />
+    <orderEntry type="library" name="eu.ocathain.com.sun.mail:javax.mail:1.5.2" level="project" />
+    <orderEntry type="library" name="com.sun.mail:javax.mail:1.4.7" level="project" />
+    <orderEntry type="library" name="javax.mail:javax.mail-api:1.4.7" level="project" />
+    <orderEntry type="library" name="org.jsoup:jsoup:1.9.2" level="project" />
   </component>
 </module>
